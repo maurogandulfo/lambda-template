@@ -1,15 +1,29 @@
+// Añadir DatabaseLayer a la lambda para usar doSql
 // const doSql = require("./opt/nodejs/connection");
+// let response = doSql("SELECT * from `jos_users`");
 
-const responseSuccess = {
+let responseSuccess = {
   statusCode: 200,
+  headers: {
+    "Access-Control-Allow-Headers":
+      "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With",
+    "Access-Control-Allow-Methods": "OPTIONS,POST,GET",
+    "Access-Control-Allow-Origin": "*",
+  },
   body: {
     responseType: "Success",
     message: "ok",
   },
 };
 
-const responseError = {
+let responseError = {
   statusCode: 400,
+  headers: {
+    "Access-Control-Allow-Headers":
+      "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With",
+    "Access-Control-Allow-Methods": "OPTIONS,POST,GET",
+    "Access-Control-Allow-Origin": "*",
+  },
   body: {
     responseType: "Error",
     message: "error",
