@@ -2,14 +2,16 @@
 // const doSql = require("./opt/nodejs/connection");
 // let response = doSql("SELECT * from `jos_users`");
 
+let headers = {
+  "Access-Control-Allow-Headers":
+    "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With",
+  "Access-Control-Allow-Methods": "OPTIONS,POST,GET",
+  "Access-Control-Allow-Origin": "*",
+}
+
 let responseSuccess = {
   statusCode: 200,
-  headers: {
-    "Access-Control-Allow-Headers":
-      "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With",
-    "Access-Control-Allow-Methods": "OPTIONS,POST,GET",
-    "Access-Control-Allow-Origin": "*",
-  },
+  headers: headers,
   body: {
     responseType: "Success",
     message: "ok",
@@ -18,12 +20,7 @@ let responseSuccess = {
 
 let responseError = {
   statusCode: 400,
-  headers: {
-    "Access-Control-Allow-Headers":
-      "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With",
-    "Access-Control-Allow-Methods": "OPTIONS,POST,GET",
-    "Access-Control-Allow-Origin": "*",
-  },
+    headers: headers,
   body: {
     responseType: "Error",
     message: "error",
