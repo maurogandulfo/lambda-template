@@ -1,5 +1,5 @@
 // Añadir DatabaseLayer a la lambda para usar doSql
-// const doSql = require("./opt/nodejs/connection");
+// const doSql = require("/opt/nodejs/connection");
 // let response = doSql("SELECT * from `jos_users`");
 
 let headers = {
